@@ -24,6 +24,7 @@ Route::get('produits', ['as' => 'pages.produits', 'uses' => 'ProduitsController@
 Route::get('produits/categorie/{categorie}', ["as" => "pages.categorie", "uses" => "ProduitsController@categorie"]);
 Route::get("produits/modification/{produit_id}", ["as" => "pages.modifier_produit", "uses" => "ProduitsController@modifierProduit"])->middleware("detaillant");
 Route::post("produits/modification/{produit_id}", ["as" => "produits.modifier", "uses" => "ProduitsController@modifier"])->middleware("detaillant");
+Route::delete("produits/suppression/{produit_id}", ["as" => "produits.supprimer", "uses" => "ProduitsController@supprimer"])->middleware("detaillant");
 
 //Routes concernant les utilisateurs.
 Route::get("utilisateur/ajouter_item", ["as" => "utilisateur.ajouter_item", "uses" => "UtilisateurController@ajouterItem"])->middleware("detaillant");

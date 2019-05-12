@@ -30,10 +30,15 @@ $animation_delay = 2.5;
                                         <a href="#"><i class="fas fa-eye"></i></a>
                                     </div>
                                     <div class="col-4">
-                                        <a href="{{route("pages.modifier_produit", ["produit_id" => $produit->id])}}"><i class="fas fa-edit"></i></a>
+                                        <a href="{{route("pages.modifier_produit", ["produit_id" => $produit->id])}}"><i
+                                                    class="fas fa-edit"></i></a>
                                     </div>
                                     <div class="col-4">
-                                        <a><i class="fas fa-trash-alt"></i></a>
+                                        <form method="post" action="{{route("produits.supprimer", ["produit_id" => $produit->id])}}">
+                                            @csrf
+                                            @method("DELETE")
+                                            <a><i class="fas fa-trash-alt"></i></a>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -60,4 +65,7 @@ $animation_delay = 2.5;
         @endif
 
     </div>
+@endsection
+@section("script_js")
+    <script src="{{asset("js/mecanisme-suppression-produit.js")}}"></script>
 @endsection

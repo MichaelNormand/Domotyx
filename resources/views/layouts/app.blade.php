@@ -14,7 +14,7 @@
         </div>
     </header>
     @include('flash::message')
-    <div class="container">
+    <div id="main_container" class="container">
         @yield('contenu')
     </div>
 </div>

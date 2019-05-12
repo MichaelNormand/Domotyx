@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Achat;
 use App\Categorie;
 use App\CategorieProduit;
 use App\Http\Requests\ModificationProduitRequest;
 use App\Http\Requests\ProduitRequest;
+use App\Panier;
 use App\Produit;
 use DateTime;
 use Illuminate\Http\RedirectResponse;
@@ -119,12 +121,12 @@ class ProduitsController extends Controller
             }
 
             if (array_key_exists("image_ref", $request->all())) {
-                if ($produit->image_url != "medias/commun/images_produits/sans-photo.svg"){
+                if ($produit->image_url != "medias/commun/images_produits/sans-photo.svg") {
                     File::delete(public_path($produit->image_url));
                 }
                 $produit->image_url = "medias/commun/images_produits/sans-photo.svg";
             } else if (!is_null($image)) {
-                if ($produit->image_url != "medias/commun/images_produits/sans-photo.svg"){
+                if ($produit->image_url != "medias/commun/images_produits/sans-photo.svg") {
                     File::delete(public_path($produit->image_url));
                 }
                 $height = getimagesize($image)[1];
@@ -142,5 +144,20 @@ class ProduitsController extends Controller
             flash("Une erreur est survenue, veuillez réessayer plus tard.")->error();
         }
         return Redirect::back();
+    }
+
+    public function supprimer($produit_id)
+    {
+        try {
+            $produit = Produit::findOrFail($produit_id);
+            CategorieProduit::where("produit_id", "=", $produit_id)->delete();
+            Panier::where("produit_id", "=", $produit_id)->delete();
+            Achat::where("produit_id", "=", $produit_id)->delete();
+            File::delete(public_path($produit->image_url));
+            $produit_supprime = $produit->delete();
+            return json_encode(["produit_supprime" => $produit_supprime]);
+        } catch (\Exception $exception) {
+            return json_encode(["produit_supprime" => false]);
+        }
     }
 }

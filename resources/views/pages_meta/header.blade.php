@@ -19,5 +19,5 @@
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <!-- Favicon generation: https://realfavicongenerator.net/ -->
+    <link rel="stylesheet" href="{{asset("css/jquery-confirm.css")}}">
 </head>

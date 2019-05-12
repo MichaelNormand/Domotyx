@@ -19,6 +19,7 @@
 <script src="{{asset("js/popper.min.js")}}"></script>
 <script src="{{asset("js/bootstrap.js")}}"></script>
 <script src="{{asset("js/mecanismes.js")}}"></script>
+<script src="{{asset("js/jquery-confirm.js")}}"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140024561-1"></script>
 <script>
