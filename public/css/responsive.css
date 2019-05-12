@@ -1,0 +1,79 @@
+
+/* #Media Queries
+================================================== */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+.map iframe {
+    width: 100%;
+}
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+.backcolor {
+	background: #f3f3f3;
+}
+nav ul li a {
+	text-align: center;
+	padding: 5px 0;
+}
+.logo a img {
+	display: block;
+	max-width: 150px;
+	padding-top: 20px;
+}
+br{display:none;}
+header {
+	padding: 10px 0;
+	position:absolute;
+	background:#fff;
+	margin-bottom:50px;
+}
+header.sticky {
+    padding: 7px 0;
+}
+#banner {
+    padding: 132px 0 30px;
+}
+nav ul li {
+    padding: 0px 0 0 0px;
+}
+#banner h1 {
+    font-size: 24px;
+    line-height: 35px;
+}
+#banner p {
+    padding-bottom: 20px;
+}
+
+#work h2, #team h2, #contact h2 {
+    font-size: 20px;
+}
+#work p, #team p {
+    padding-bottom: 25px;
+}
+	
+	#work a img {
+    margin: 0 auto 25px;
+}
+.map iframe {
+    width: 100%;
+}
+p.rightside {
+    text-align: center;
+	margin-top:20px;
+}
+footer {
+    text-align: center;
+}
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+}

@@ -1,0 +1,596 @@
+/*................................reset...........................................*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*................................clearfix...........................................*/
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+/* start commented backslash hack \*/
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+/*.........GLOBLE......*/
+
+body {
+    font-family: Gotham, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    color: #98a0a5;
+    font-weight: 400;
+}
+
+header {
+    width: 100%;
+    position: relative;
+    padding: 40px 0;
+    transition: all 0.4s ease;
+}
+
+header.sticky {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    background: #f3f3f3;
+    padding: 15px 0;
+    box-shadow: 3px 1px 0.99px 0.01px rgba(0, 0, 0, 0.05);
+}
+
+header a.logo img {
+    display: block;
+}
+
+.logo {
+    width: 30%;
+    float: left;
+}
+
+.logo a img {
+    display: block;
+    max-width: 150px;
+    padding-top: 10px;
+}
+
+nav {
+    padding-top: 7px;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0 0 0 100px;
+}
+
+nav ul li a {
+    font-size: 12px;
+    line-height: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    color: #a7a7a7;
+}
+
+nav ul li a:hover {
+    color: #000;
+    transition: all 0.5s;
+}
+
+#banner {
+    background: url("../medias/commun/banner.jpg") no-repeat bottom center;
+    background-size: cover;
+    padding: 216px 0 110px;
+    text-align: center;
+    position: relative;
+    z-index: 100;
+}
+
+#banner h1 {
+    font-size: 40px;
+    line-height: 50px;
+    color: lightgray;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#banner p {
+    color: #5a5a5a;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 30px;
+    padding-bottom: 60px;
+    padding-top: 5px;
+}
+
+#banner a {
+    display: block;
+    margin: 0 auto;
+}
+
+#banner a i {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #525252;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 rgba(0, 1, 1, 0.2);
+}
+
+.circle:hover {
+    background: #fff;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    line-height: 86px;
+    background: #f1f2ef;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+#banner a {
+}
+
+#dernieres_produits {
+    padding-top: 46px;
+    text-align: center;
+}
+
+#dernieres_produits h2, #equipe h2, #contacts h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #303030;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.titre {
+    font-size: 30px;
+    font-weight: 700;
+    color: #303030;
+    text-transform: uppercase;
+}
+
+.titre-align {
+    text-align: center;
+}
+
+span.line {
+    width: 240px;
+    height: 3px;
+    display: inline-block;
+    background: #303030;
+}
+
+#dernieres_produits p, #equipe p {
+    color: #5a5a5a;
+    padding-top: 10px;
+    padding-bottom: 45px;
+}
+
+#dernieres_produits a img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 60px;
+}
+
+#equipe {
+    padding: 45px 0 55px;
+    background: #f3f3f3;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+#equipe article {
+    max-width: 210px;
+    width: 100%;
+    margin: 0 auto 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 1, 1, 0.2);
+    background: #fff;
+    padding: 15px;
+}
+
+#equipe article h3 {
+    color: #303030;
+    font-weight: 700;
+}
+
+#equipe article span {
+    display: block;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    color: #303030;
+    margin-bottom: 10px;
+}
+
+#equipe article a i {
+    color: #7f7f7f;
+    margin: 0 5px;
+    font-size: 20px;
+}
+
+#equipe article a i:hover {
+    color: #303030;
+    transition: all 0.5s;
+}
+
+#contacts {
+    padding: 45px 0 60px;
+    text-align: center;
+}
+
+#contacts p {
+    padding: 25px 0;
+    text-align: left;
+    color: #5a5a5a;
+}
+
+.map {
+    text-align: left;
+}
+
+.map iframe {
+    width: 320px;
+    height: 320px;
+    box-shadow: 0 2px 4px 0 rgba(0, 1, 1, 0.25);
+    border: 5px solid #fff;
+}
+
+footer {
+    background: #4f4f4f;
+    padding: 35px 0;
+    color: #6e6e6e;
+}
+
+p.rightside {
+    text-align: right;
+}
+
+footer a {
+    color: #6e6e6e;
+}
+
+footer a:hover {
+    color: #fff;
+    transition: all 0.5s;
+}
+
+/* New */
+
+.os-animation {
+    opacity: 0;
+}
+
+.os-animation.animated {
+    opacity: 1;
+}
+
+.staggered-animation {
+    opacity: 0;
+}
+
+.staggered-animation.animated {
+    opacity: 1;
+}
+
+/*LOADER EFFECT*/
+/*Paste this css to your style sheet file or under head tag*/
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
+.se-pre-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #a4b9be;
+}
+
+
+.cssload-aim {
+    position: relative;
+    width: 78px;
+    height: 78px;
+    top: 45%;
+    left: calc(50% - 42px);
+    left: calc(50% - 42px);
+
+    border-radius: 49px;
+    background-color: rgb(164, 185, 190);
+    border-width: 39px;
+    border-style: double;
+    border-color: transparent rgb(0, 0, 0);
+
+    box-sizing: border-box;
+    transform-origin: 50% 50%;
+    animation: cssload-aim 2.3s linear infinite;
+
+}
+
+
+@keyframes cssload-aim {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes cssload-aim {
+    0% {
+        -o-transform: rotate(0deg);
+    }
+    100% {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes cssload-aim {
+    0% {
+        -ms-transform: rotate(0deg);
+    }
+    100% {
+        -ms-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes cssload-aim {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes cssload-aim {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+.overflow {
+    position: relative;
+    z-index: 2;
+}
+
+.menu-overflow {
+    position: relative;
+    z-index: 3;
+}
+
+.image-categorie-produit {
+    transition: 0.5s ease;
+    height: 170px;
+}
+
+.sous-titre {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.categorie-produit:hover, .profil:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.titre-categorie {
+    font-size: 15px;
+    font-weight: 700;
+    color: #303030;
+    text-transform: uppercase;
+}
+
+.container-allign {
+    padding-bottom: 30px;
+}
+
+.categorie-produit {
+    margin-bottom: 20px;
+}
+
+.menu-item-select {
+    border-color: #ffffff;
+    background-color: #ffffff;
+    font-size: 12px;
+    line-height: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+a.dropdown-toggle, a.dropdown-toggle:focus {
+    outline: none !important;
+}
+
+.dropdown-item:hover {
+    background-color: #6c757d;
+    color: #ffffff !important;
+}
+
+#produit_recherche:focus {
+    border-left: 1px solid #6c757d !important;
+    border-top: 1px solid #ced4da !important;
+    border-bottom: 1px solid #ced4da !important;
+    border-right: 1px solid #dc3545 !important;
+}
+
+.image-profil {
+    height: 160px;
+}
+
+.texte {
+    font-size: 16px;
+    font-weight: 700;
+    color: #727272;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.profil-info-margin {
+    margin-left: 6px;
+}
+
+.form-control-file {
+    display: none;
+}
+
+.erreur, b {
+    color: #dc3545;
+}
+
+.correct {
+    color: #28a745;
+}
+
+.attention {
+    color: #e2db00;
+}
+
+#boutton_ajout_categorie {
+    margin-top: 10px;
+}
+
+.table td.fit,
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+
+.button-margin {
+    margin-bottom: 20px;
+}
+
+.image-selectionnee {
+    height: 50px;
+}
+
+.image-erreur {
+    width: 240px;
+    height: 180px;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    text-align: center;
+}
+
+.fas {
+    color: black;
+}
+
+.categorie-produit-container:hover .container .middle {
+    cursor: default !important;
+    opacity: 1;
+}
+
+.categorie-produit-container:hover .container .image-categorie-produit {
+    opacity: 0.5;
+}
+
+.suppression-marge-bas {
+    margin-bottom: 0;
+!important;
+}
+
+.form-button {
+    margin: 0 !important;
+}
+
+.form-check {
+    margin-bottom: 1rem;
+}
+
+.form-description {
+    height: 117px !important;
+}
+
+.a_style {
+    color: #007bff !important;
+}
+
+.a_style:hover {
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+
+.image-modification {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
