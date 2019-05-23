@@ -29,6 +29,13 @@ class ProduitsController extends Controller
         return View("pages/accueil_produits", ["categories" => $categories]);
     }
 
+    public function produit($produit_id)
+    {
+        $categories = Categorie::orderBy("nom")->get();
+        $produit = Produit::findOrFail($produit_id);
+        return View("pages/affichage_produit", ["categories" => $categories, "produit" => $produit]);
+    }
+
     /**
      * Fonction permettant de délivrer une page dynamique des produits d'une catégorie.
      * @return View Retour de la vue propre aux produits des catégories.
@@ -153,7 +160,9 @@ class ProduitsController extends Controller
             CategorieProduit::where("produit_id", "=", $produit_id)->delete();
             Panier::where("produit_id", "=", $produit_id)->delete();
             Achat::where("produit_id", "=", $produit_id)->delete();
-            File::delete(public_path($produit->image_url));
+            if ($produit->image_url != "medias/commun/images_produits/sans-photo.svg") {
+                File::delete(public_path($produit->image_url));
+            }
             $produit_supprime = $produit->delete();
             return json_encode(["produit_supprime" => $produit_supprime]);
         } catch (\Exception $exception) {

@@ -1,5 +1,5 @@
 <?php
-$animation_delay = 2.5;
+$animation_delay = 0.5;
 ?>
 
 @extends("layouts/produits")
@@ -10,43 +10,48 @@ $animation_delay = 2.5;
 @endif
 
 @section("contenu_page")
-    <div class="container os-animation" data-os-animation="fadeIn" data-os-animation-delay="2.5s">
+    <div class="container os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.5s">
         <h3 class="sous-titre">Liste des Produits:</h3>
     </div>
     <div class="container container-allign">
         @if(@isset($produits) && @isset($categories))
             @if($produits->count() > 0)
                 @foreach($produits as $produit)
-                    @if (\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::user()->est_administrateur)
-                        <div class="col-lg-4 col-sm-12 text-center categorie-produit-container os-animation"
-                             data-os-animation="fadeIn"
-                             data-os-animation-delay="{{$animation_delay += 0.1}}s">
-                            <div class="container">
-                                <img src="{{asset($produit->image_url)}}"
-                                     class="image-categorie-produit rounded shadow p-1 mb-1 bg-white"
-                                     alt="produit_image">
-                                <div class="middle row">
-                                    <div class="col-4">
-                                        <a href="#"><i class="fas fa-eye"></i></a>
+                    @if (Auth::check())
+                        @can("edition", Auth::user())
+                            <div class="col-lg-4 col-sm-12 text-center categorie-produit-container os-animation"
+                                 data-os-animation="fadeIn"
+                                 data-os-animation-delay="{{$animation_delay += 0.1}}s">
+                                <div class="container container-img">
+                                    <img src="{{asset($produit->image_url)}}"
+                                         class="image-categorie-produit rounded shadow p-1 mb-1 bg-white"
+                                         alt="produit_image">
+                                    <div class="middle row">
+                                        <div class="col-4">
+                                            <a href="{{route("pages.specification_produit", ["produit_id" => $produit->id])}}"><i
+                                                        class="fas fa-eye"></i></a>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="{{route("pages.modifier_produit", ["produit_id" => $produit->id])}}"><i
+                                                        class="fas fa-edit"></i></a>
+                                        </div>
+                                        <div class="col-4">
+                                            <form method="post"
+                                                  action="{{route("produits.supprimer", ["produit_id" => $produit->id])}}">
+                                                @csrf
+                                                @method("DELETE")
+                                                <a><i class="fas fa-trash-alt"></i></a>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <a href="{{route("pages.modifier_produit", ["produit_id" => $produit->id])}}"><i
-                                                    class="fas fa-edit"></i></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <form method="post" action="{{route("produits.supprimer", ["produit_id" => $produit->id])}}">
-                                            @csrf
-                                            @method("DELETE")
-                                            <a><i class="fas fa-trash-alt"></i></a>
-                                        </form>
+                                    <div class="container">
+                                        <h1 class="titre-categorie">{{html_entity_decode(htmlspecialchars($produit->nom))}}</h1>
                                     </div>
                                 </div>
                             </div>
-                            <h1 class="titre-categorie">{{html_entity_decode(htmlspecialchars($produit->nom))}}</h1>
-                        </div>
-
+                        @endcan
                     @else
-                        <a href="#">
+                        <a href="{{route("pages.specification_produit", ["produit_id" => $produit->id])}}">
                             <div class="col-lg-4 col-sm-12 text-center categorie-produit os-animation"
                                  data-os-animation="fadeIn"
                                  data-os-animation-delay="{{$animation_delay += 0.1}}s">

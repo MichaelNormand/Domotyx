@@ -17,22 +17,28 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', ["as" => "pages.accueil", "uses" => "PagesController@accueil"]);
 
 //Route de la page d'une page non complétée.
-Route::get('informations_a_venir', ['as' => 'pages.informations', 'uses' => 'PagesController@informations']);
+Route::get('/informations_a_venir', ['as' => 'pages.informations', 'uses' => 'PagesController@informations']);
+
+// Route concernant la modification des pages statiques
+Route::get("/pages/modification", ["as" => "pages.modification", "uses" => "PagesController@modification"])->middleware("detaillant");
+Route::post("/pages/modification", ["as" => "pages.modifier", "uses" => "PagesController@modifier"])->middleware("detaillant");
+Route::post("/pages/{page_id}/contenu", ["as" => "pages.contenu", "uses" => "PagesController@contenu"])->middleware("detaillant");
 
 //Routes concernant les produits.
-Route::get('produits', ['as' => 'pages.produits', 'uses' => 'ProduitsController@index']);
-Route::get('produits/categorie/{categorie}', ["as" => "pages.categorie", "uses" => "ProduitsController@categorie"]);
-Route::get("produits/modification/{produit_id}", ["as" => "pages.modifier_produit", "uses" => "ProduitsController@modifierProduit"])->middleware("detaillant");
-Route::post("produits/modification/{produit_id}", ["as" => "produits.modifier", "uses" => "ProduitsController@modifier"])->middleware("detaillant");
-Route::delete("produits/suppression/{produit_id}", ["as" => "produits.supprimer", "uses" => "ProduitsController@supprimer"])->middleware("detaillant");
+Route::get('/produits', ['as' => 'pages.produits', 'uses' => 'ProduitsController@index']);
+Route::get('/produits/categorie/{categorie}', ["as" => "pages.categorie", "uses" => "ProduitsController@categorie"]);
+Route::get("/produits/modification/{produit_id}", ["as" => "pages.modifier_produit", "uses" => "ProduitsController@modifierProduit"])->middleware("detaillant");
+Route::get("/produits/{produit_id}", ["as" => "pages.specification_produit", "uses" => "ProduitsController@produit"]);
+Route::post("/produits/modification/{produit_id}", ["as" => "produits.modifier", "uses" => "ProduitsController@modifier"])->middleware("detaillant");
+Route::delete("/produits/suppression/{produit_id}", ["as" => "produits.supprimer", "uses" => "ProduitsController@supprimer"])->middleware("detaillant");
 
 //Routes concernant les utilisateurs.
-Route::get("utilisateur/ajouter_item", ["as" => "utilisateur.ajouter_item", "uses" => "UtilisateurController@ajouterItem"])->middleware("detaillant");
-Route::post("utilisateur/ajouter_item", ["as" => "utilisateur.soumettre_item", "uses" => "ProduitsController@soumettreItem"])->middleware("detaillant");
-Route::get("utilisateur", ["as" => "pages.utilisateur", "uses" => "UtilisateurController@utilisateur"])->middleware("auth");
+Route::get("/utilisateur/ajouter_item", ["as" => "utilisateur.ajouter_item", "uses" => "UtilisateurController@ajouterItem"])->middleware("detaillant");
+Route::post("/utilisateur/ajouter_item", ["as" => "utilisateur.soumettre_item", "uses" => "ProduitsController@soumettreItem"])->middleware("detaillant");
+Route::get("/utilisateur", ["as" => "pages.utilisateur", "uses" => "UtilisateurController@utilisateur"])->middleware("auth");
 
 //Routes concernant les commentaires.
-Route::post("soumission_commentaire/{page}", ["as" => "commentaires.soumettre", "uses" => "CommentairesController@store"]);
+Route::post("/soumission_commentaire/{page}", ["as" => "commentaires.soumettre", "uses" => "CommentairesController@store"]);
 
 //Routes concernant les méthodes de connexion.
 Route::get("/connexion", ["as" => "pages.connexion", "uses" => "PagesController@connexion"])->middleware("guest");

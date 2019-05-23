@@ -62,11 +62,12 @@
                                                                         data-toggle='dropdown' aria-expanded='false'>Mon
                 Compte</a>
             <div class='dropdown-menu'>
-                @if (\Illuminate\Support\Facades\Auth::check())
-                    @if (\Illuminate\Support\Facades\Auth::user()->est_administrateur)
+                @if (Auth::check())
+                    @can("gestion", Auth::user())
                         <a href="{{route("utilisateur.ajouter_item")}}"
                            class="dropdown-item">Ajouter un produit</a>
-                    @endif
+                        <a href="{{route("pages.modification")}}" class="dropdown-item">Modification des pages</a>
+                    @endcan
                     <form id="form_deconnexion" method="post"
                           action="{{route("utilisateur.deconnexion")}}">{{csrf_field()}}<a id="deconnexion" href=""
                                                                                            class="dropdown-item">Se

@@ -5,7 +5,7 @@
         <span class="line row"></span>
     </div>
     <div class="container">
-        <div class="row os-animation overflow" data-os-animation="fadeInLeft" data-os-animation-delay="0.7s">
+        <div class="row os-animation overflow" data-os-animation="fadeIn" data-os-animation-delay="0.3s">
             <div class="col-lg-12">
                 <div class="form-group">
                     <div class="input-group">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                <hr class="os-animation" data-os-animation="fadeIn" data-os-animation-delay="1.5s"/>
+                <hr class="os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.4s"/>
             </div>
         </div>
         <div>

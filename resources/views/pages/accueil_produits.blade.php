@@ -1,11 +1,11 @@
 <?php
-$animationDelay = 2.7;
+$animationDelay = 0.5;
 ?>
 @extends("layouts/produits")
 @section("contenu_page")
     @isset($categories)
         @if($categories->count() > 0)
-            <div class="container os-animation" data-os-animation="fadeIn" data-os-animation-delay="2.5s">
+            <div class="container os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.5s">
                 <h3 class="sous-titre">Rechercher par Catégories</h3>
             </div>
             <div class="container container-allign">

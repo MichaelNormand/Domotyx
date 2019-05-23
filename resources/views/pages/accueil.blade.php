@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
-                <h1>La plateforme de vente de l'entreprise connectée la plus réputée au monde!</h1>
+                <h1>{{$page->h1}}</h1>
                 <p>Projet étudiant - données fictives</p>
                 <div class="circle"><a href="#dernieres_produits" data-scroll><i class="fa fa-angle-down"
                                                                                  aria-hidden="true"></i></a></div>
@@ -94,8 +94,8 @@
                     <img src="{{asset("medias/commun/t1.png")}}" alt=""/>
                     <h3>PRÉNOM NOM</h3>
                     <span>Rôle</span>
-                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                 </article>
             </div>
             <div class="col-lg-3 col-sm-6 col-md-3 os-animation" data-os-animation="zoomIn"
@@ -104,9 +104,9 @@
                     <img src="{{asset("medias/commun/t1.png")}}" alt=""/>
                     <h3>PRÉNOM NOM</h3>
                     <span>Rôle</span>
-                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fab fa-dribbble" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                 </article>
             </div>
             <div class="col-lg-3 col-sm-6 col-md-3 os-animation" data-os-animation="zoomIn"
@@ -115,8 +115,8 @@
                     <img src="{{asset("medias/commun/t1.png")}}" alt=""/>
                     <h3>PRÉNOM NOM</h3>
                     <span>Rôle</span>
-                    <a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fab fa-skype" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                 </article>
             </div>
             <div class="col-lg-3 col-sm-6 col-md-3 os-animation" data-os-animation="zoomIn"
@@ -125,12 +125,15 @@
                     <img src="{{asset("medias/commun/t1.png")}}" alt=""/>
                     <h3>PRÉNOM NOM</h3>
                     <span>Rôle</span>
-                    <a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fab fa-skype" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                 </article>
             </div>
 
         </div>
+    </div>
+    <div class="container">
+        {!! $page->contenu !!}
     </div>
 </section>
 @if(@isset($errors) && $errors->any())

@@ -10,7 +10,6 @@ use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
-use Mockery\Exception;
 
 class UtilisateurController extends Controller
 {
@@ -44,6 +43,11 @@ class UtilisateurController extends Controller
         }
     }
 
+    /**
+     * Fonction permettant de se connecter à la plateforme.
+     * @param UtilisateurConnexionRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function connecter( UtilisateurConnexionRequest $request ) {
         $authentification_reussi = Auth::attempt(["identifiant" => $request->identifiant, "password" => $request->mot_de_passe, "est_actif" => 1]);
         if ( $authentification_reussi ){
@@ -55,11 +59,20 @@ class UtilisateurController extends Controller
         }
     }
 
+    /**
+     * Fonction permettant de se déconnecter de la plateforme.
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function deconnecter() {
         Auth::logout();
         return Redirect::back();
     }
 
+    /**
+     * Fonction permettant de créer un utilisateur.
+     * @param UtilisateurInscriptionRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function creer(UtilisateurInscriptionRequest $request) {
         try{
             $erreur_image = false;

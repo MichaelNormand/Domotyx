@@ -18,7 +18,7 @@ class CreateDomotyxPages extends Migration
             $table->string("url", 250);
             $table->string("titre", 100);
             $table->string("h1", 100);
-            $table->longText("contenu");
+            $table->longText("contenu")->nullable();
             $table->timestamps();
         });
     }

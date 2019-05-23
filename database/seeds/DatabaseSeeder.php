@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DomotyxCommentaires::class);
         $this->call(DomotyxMenu::class);
         $this->call(DomotyxPays::class);
+        $this->call(DomotyxPages::class);
     }
 }

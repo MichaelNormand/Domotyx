@@ -563,9 +563,12 @@ a.dropdown-toggle, a.dropdown-toggle:focus {
     opacity: 0.5;
 }
 
+.categorie-produit-container img{
+    max-width: 100% !important;
+}
+
 .suppression-marge-bas {
-    margin-bottom: 0;
-!important;
+    margin-bottom: 0 !important;
 }
 
 .form-button {
@@ -605,4 +608,23 @@ a.dropdown-toggle, a.dropdown-toggle:focus {
 
 .jconfirm-content{
     color: #2e2e2e;
+}
+
+.jconfirm-box-container{
+    margin: 0 !important;
+}
+
+.container-img{
+    width: 100%;
+}
+.container.main-container{
+    width: 100%;
+}
+
+#titre_page {
+    margin-bottom: 15px;
+}
+
+#bouton_page {
+    margin-top: 15px;
 }
